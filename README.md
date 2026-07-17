@@ -19,7 +19,7 @@
 |-----------------|-----------------------------------------------------|
 | **Alumno**      | Castellanos Rios Carlos Eduardo                     |
 | **Materia**     | Programacion Web                                    |
-| **Semestre**    | 4                                                   |
+| **Semestre**    | 7                                                   |
 | **Actividad**   | 2 - Controllers, Model y Templates                  |
 | **Universidad** | Instituto Tecnologico de Oaxaca                     |
 | **Carrera**     | Ingenieria en Sistemas Computacionales              |
@@ -163,31 +163,6 @@ springboot-application/
 ├── pom.xml                                 // Dependencias Maven
 └── README.md
 ```
-
----
-
-## Ejecutar el Proyecto
-
-### Requisitos previos
-- Java 25
-- Maven 3.9+
-
-### Pasos
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/cecDev-X/CRCEact2_t4.git
-
-# Entrar al directorio
-cd CRCEact2_t4
-
-# Ejecutar la aplicacion
-./mvnw spring-boot:run
-```
-
-### La app estara disponible en:
-- **Local:** `http://localhost:9526`
-- **Produccion:** `https://chatsito.com.mx`
 
 ---
 
