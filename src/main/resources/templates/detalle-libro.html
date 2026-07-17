@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Libro</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 500px; }
+        h1 { color: #007bff; }
+        .back-btn { display: inline-block; margin-top: 15px; text-decoration: none; color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card" th:if="${libro != null}">
+        <h1 th:text="${libro.nombre}">Título</h1>
+        <p><strong>ISBN:</strong> <span th:text="${libro.isbn}">ISBN</span></p>
+        <p><strong>Autor:</strong> <span th:text="${libro.autor}">Autor</span></p>
+        <p><strong>Descripción:</strong> <span th:text="${libro.descripcion}">Descripción</span></p>
+        <p><strong>Stock disponible:</strong> <span th:text="${libro.stock}">0</span> unidades</p>
+        <p><strong>Precio:</strong> <span th:text="'$' + ${libro.precio}">$0.00</span></p>
+        <a href="/libros/lista" class="back-btn">← Volver al catálogo</a>
+    </div>
+</body>
+</html>

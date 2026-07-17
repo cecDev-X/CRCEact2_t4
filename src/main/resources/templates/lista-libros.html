@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Libros</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .btn { display: inline-block; padding: 10px 15px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- Muestra el valor de @Value -->
+    <h1 th:text="${tituloProyecto}">Nombre del Proyecto</h1>
+    
+    <h2>Catálogo de Libros</h2>
+    <a href="/libros/nuevo" class="btn">Añadir Nuevo Libro</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Nombre</th>
+                <th>Autor</th>
+                <th>Descripción</th>
+                <th>Stock</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- th:each para recorrer la lista de libros -->
+            <tr th:each="libro : ${listaLibros}">
+                <td th:text="${libro.isbn}">ISBN</td>
+                <td th:text="${libro.nombre}">Nombre</td>
+                <td th:text="${libro.autor}">Autor</td>
+                <td th:text="${libro.descripcion}">Descripción</td>
+                <td th:text="${libro.stock}">0</td>
+                <td th:text="'$' + ${libro.precio}">$0.0</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

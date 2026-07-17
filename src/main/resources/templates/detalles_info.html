@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${titulo}"></title>
 </head>
-<body>
-    <h1 th:text="${subtitulo}"></h1>
-    <p th:text="${presentacion}"></p>
-    <p th:text="${descripcion}"></p>
+<h1> Trabajadores</h1>
+
+<ul>
+    <li><strong>Nombres: </strong> <a th:text="${empleado.nombre}"></a></li>
+    <li><strong>Apellidos: </strong><a th:text="${empleado.apellido}"></a></li>
+    <li><strong>Email: </strong><a th:text="${empleado.email}"></a></li>
+    <li><strong>Puesto: </strong><a th:text="${empleado.puesto}"></a></li>
+    <li><strong>Edad: </strong><a th:text="${empleado.edad}"></a></li>
+    <li><strong>Salario: </strong><a th:text="${empleado.salario}"></a></li>
+    <li><strong>ID: </strong><a th:text="${empleado.id}"></a></li>
+
+</ul>
+
+<h1>Lista de Empleados</h1>
+<table border=1>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Puesto</th>
+            <th>Edad</th>
+            <th>Salario</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="Empleado : ${Empleado}">
+            <td th:text="${Empleado.nombre}"></td>
+            <td th:text="${Empleado.apellido}"></td>
+            <td th:text="${Empleado.email}"></td>
+            <td th:text="${Empleado.puesto}"></td>
+            <td th:text="${Empleado.edad}"></td>
+            <td th:text="${Empleado.salario}"></td>
+            <td th:text="${Empleado.id}"></td>
+        </tr>
+    </tbody>
+</table>
 </body>
+
 </html>
